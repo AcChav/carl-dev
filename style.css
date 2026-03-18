@@ -1,20 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Space+Mono:wght@400;700&family=VT323&display=swap');
 
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     min-height: 100vh;
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'JetBrains Mono', monospace;
     font-weight: 700;
+    color: #111; 
+    line-height: 1.2;
+    margin-top: 2rem; 
+    margin-bottom: 1rem; 
 }
+
+
+h1 { font-size: 2.25rem; margin-top: 0; } 
+h2 { font-size: 1.5rem; border-bottom: 2px solid #eee; padding-bottom: 0.5rem; } 
+h3 { font-size: 1.15rem; } 
 
 p {
     font-family: 'Source Code Pro', monospace;
-    font-size: 0.95rem;
+    font-size: 1rem;
+    line-height: 1.6; 
+    margin-bottom: 1.25rem;
+    color: #444; 
 }
 
 li {
@@ -22,11 +37,50 @@ li {
     text-align: justify;
 }
 
-footer{
+a {
+    color: #000000;
+    text-decoration: none;
+}
+
+/* circle */
+
+.profile-header {
+    position: relative;
+    overflow-x: hidden;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.4; }
+    50% { opacity: 0.6; }
+    100% { opacity: 0.4; }
+}
+
+.circle {
+    position: absolute;
+    top: -50px;
+    right: -100px;
+    width: 15rem;
+    height: 15rem;
+    border-radius: 50%;
+    z-index: -1;
+    animation: pulse 4s infinite ease-in-out;
+    background: repeating-radial-gradient(circle,
+            #ff7272,
+            #ff7272 2px,
+            #ffb835 2px,
+            #ffb835 4px);
+    opacity: 0.5;
+}
+
+/* end circle */
+
+footer {
     background-color: #ffffff;
     text-align: center;
-    padding: 1rem 0;
-    margin-top: 2rem;
+    margin-top: 4rem;
 }
 
 .profile-img {
@@ -36,20 +90,96 @@ footer{
 }
 
 .container {
-    max-width: 1000px; 
-    margin: 0 auto; 
+    max-width: 1000px;
+    margin: 0 auto;
     padding: 4rem 2rem 0 2rem;
 }
 
-.header-content, .education-content, .internship-content, .project-content {
+.header-content,
+.education-content,
+.internship-content,
+.project-content {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; 
+    gap: 1rem;     
 }
 
 .col-3 {
-    width: 33.33%;
+    width: 200px; 
 }
 
 .col-7 {
-    width: 66.66%;
+    flex: 1; 
+}
+
+.fname {
+    margin-bottom: 0;
+}
+
+.contacts {
+    position: relative;
+    margin-top: 0;
+}
+
+.icons {
+    width: 24px;
+    height: 24px;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+.github {
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+.linkedin {
+    width: 26px;
+    height: 22px;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+@media (max-width: 768px) {
+    .header-content{
+        justify-content: center;
+        text-align: center;
+    }
+
+    .education-content,
+    .internship-content,
+    .project-content {
+        flex-direction: column;
+        align-items: center; 
+        text-align: start;
+        gap: 0;
+    }
+
+    .col-3, .col-7 {
+        width: 100% !important; 
+        max-width: 100%;
+        flex: none; 
+        margin-bottom: 0.5rem; 
+    }
+
+    .col-3 p, .col-7 h3 {
+        margin: 0; 
+        padding: 0;
+    }
+
+    .profile-img {
+        margin-bottom: 1.5rem;
+    }
+
+    .container {
+        padding-top: 2rem;
+    }
+
+    .circle {
+        display: none !important; 
+    }
 }
