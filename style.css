@@ -144,6 +144,40 @@ footer {
     vertical-align: middle;
 }
 
+.download-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #111; 
+    color: #fff;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: 2px solid #333;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin-top: 2rem;
+}
+
+.download-btn:hover {
+    background-color: #ffb835; 
+    color: #111;
+    cursor: pointer;
+    box-shadow: 4px 4px 0px #333; 
+    transform: translate(-2px, -2px);
+}
+
+.divide {
+    position: relative;
+    overflow-x: clip;
+
+}
+
+.curve {
+    position: absolute;
+    z-index: -1;
+    top: 50px;
+}
+
 @media (max-width: 768px) {
     .header-content{
         justify-content: center;
@@ -180,6 +214,10 @@ footer {
     }
 
     .circle {
+        display: none !important; 
+    }
+
+    .divide {
         display: none !important; 
     }
 }
