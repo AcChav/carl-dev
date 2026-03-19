@@ -1,6 +1,45 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Space+Mono:wght@400;700&family=VT323&display=swap');
 
-*, *::before, *::after {
+:root {
+    --bg-color: #121212;
+    --text-primary: #e0e0e0;
+    --text-secondary: #b0b0b0;
+    --border-color: #333333;
+    --accent-color: #ffb835;
+    --link-hover: #ff7272;
+    --icon-filter: invert(1);
+}
+
+[data-theme="light"] {
+    --bg-color: #ffffff;
+    --text-primary: #111111;
+    --text-secondary: #444444;
+    --border-color: #333333;
+    --accent-color: #ffb835;
+    --link-hover: #ff2121;
+    --icon-filter: none;
+}
+
+.theme-btn {
+    background: transparent;
+    border: 1px solid var(--text-primary);
+    color: var(--text-primary);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    padding: 4px 8px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: 0.2s;
+}
+
+.theme-btn:hover {
+    background: var(--text-primary);
+    color: var(--bg-color);
+}
+
+*,
+*::before,
+*::after {
     box-sizing: border-box;
 }
 
@@ -8,28 +47,47 @@ body {
     margin: 0;
     padding: 0;
     min-height: 100vh;
+    background-color: var(--bg-color);
+    color: var(--text-secondary);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: 'JetBrains Mono', monospace;
     font-weight: 700;
-    color: #111; 
+    color: var(--text-primary);
     line-height: 1.2;
-    margin-top: 2rem; 
-    margin-bottom: 1rem; 
+    margin-top: 2rem;
+    margin-bottom: 1rem;
 }
 
 
-h1 { font-size: 2.25rem; margin-top: 0; } 
-h2 { font-size: 1.5rem; border-bottom: 2px solid #eee; padding-bottom: 0.5rem; } 
-h3 { font-size: 1.15rem; } 
+h1 {
+    font-size: 2.25rem;
+    margin-top: 0;
+}
+
+h2 {
+    font-size: 1.5rem;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+h3 {
+    font-size: 1.15rem;
+}
 
 p {
     font-family: 'Source Code Pro', monospace;
     font-size: 1rem;
-    line-height: 1.6; 
+    line-height: 1.6;
     margin-bottom: 1.25rem;
-    color: #444; 
+    color: var(--text-secondary);
 }
 
 li {
@@ -38,8 +96,17 @@ li {
 }
 
 a {
-    color: #000000;
+    color: var(--text-primary);
     text-decoration: none;
+    font-family: 'JetBrains Mono', monospace;
+    transition: all 0.2s ease-in-out;
+}
+
+a:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    text-decoration-thickness: 2px;
 }
 
 /* circle */
@@ -53,9 +120,17 @@ a {
 }
 
 @keyframes pulse {
-    0% { opacity: 0.4; }
-    50% { opacity: 0.6; }
-    100% { opacity: 0.4; }
+    0% {
+        opacity: 0.4;
+    }
+
+    50% {
+        opacity: 0.6;
+    }
+
+    100% {
+        opacity: 0.4;
+    }
 }
 
 .circle {
@@ -78,7 +153,8 @@ a {
 /* end circle */
 
 footer {
-    background-color: #ffffff;
+    background-color: var(--bg-color);
+    border-top: 1px solid var(--border-color);
     text-align: center;
     margin-top: 4rem;
 }
@@ -102,16 +178,16 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap; 
-    gap: 1rem;     
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
 .col-3 {
-    width: 200px; 
+    width: 200px;
 }
 
 .col-7 {
-    flex: 1; 
+    flex: 1;
 }
 
 .fname {
@@ -147,7 +223,7 @@ footer {
 .download-btn {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #111; 
+    background-color: #111;
     color: #fff;
     font-family: 'JetBrains Mono', monospace;
     font-weight: 700;
@@ -159,27 +235,37 @@ footer {
 }
 
 .download-btn:hover {
-    background-color: #ffb835; 
+    background-color: #ffb835;
     color: #111;
     cursor: pointer;
-    box-shadow: 4px 4px 0px #333; 
+    box-shadow: 4px 4px 0px #333;
     transform: translate(-2px, -2px);
 }
 
 .divide {
     position: relative;
     overflow-x: clip;
-
 }
 
 .curve {
     position: absolute;
     z-index: -1;
-    top: 50px;
+    min-width: 1000px;
+    margin-left: 52%;
+    transform: translateX(-39%);
+    margin-top: 30px;
+}
+
+
+.icons,
+.github,
+.linkedin {
+    filter: var(--icon-filter);
+    transition: filter 0.3s ease;
 }
 
 @media (max-width: 768px) {
-    .header-content{
+    .header-content {
         justify-content: center;
         text-align: center;
     }
@@ -188,20 +274,22 @@ footer {
     .internship-content,
     .project-content {
         flex-direction: column;
-        align-items: center; 
+        align-items: center;
         text-align: start;
         gap: 0;
     }
 
-    .col-3, .col-7 {
-        width: 100% !important; 
+    .col-3,
+    .col-7 {
+        width: 100% !important;
         max-width: 100%;
-        flex: none; 
-        margin-bottom: 0.5rem; 
+        flex: none;
+        margin-bottom: 0.5rem;
     }
 
-    .col-3 p, .col-7 h3 {
-        margin: 0; 
+    .col-3 p,
+    .col-7 h3 {
+        margin: 0;
         padding: 0;
     }
 
@@ -214,10 +302,10 @@ footer {
     }
 
     .circle {
-        display: none !important; 
+        display: none !important;
     }
 
     .divide {
-        display: none !important; 
+        display: none !important;
     }
 }

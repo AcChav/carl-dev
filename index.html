@@ -30,6 +30,7 @@ TODO:
                     <div class="circle"></div>
                 </div>
                 <div class="profile-info">
+                    <button id="theme-toggle" class="theme-btn">MODE: DARK</button>
                     <h1 class="fname">ALBRECHT CARL CHAVEZ</h1>
                     <p class="contacts">
                         <a href="assets/chavez_resume.pdf" target="_blank" download="Albrecht_Chavez_Resume.pdf"
@@ -182,6 +183,30 @@ TODO:
             &copy; 2025 Albrecht Chavez. All rights reserved.
         </p>
     </footer>
+
+    <script>
+        const btn = document.getElementById('theme-toggle');
+        // Check localStorage, but default to 'dark' if empty
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+
+        // Apply the theme immediately
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        btn.textContent = savedTheme === 'dark' ? 'MODE: LIGHT' : 'MODE: DARK';
+
+        btn.addEventListener('click', () => {
+            let currentTheme = document.documentElement.getAttribute('data-theme');
+
+            if (currentTheme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+                btn.textContent = 'MODE: DARK';
+            } else {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+                btn.textContent = 'MODE: LIGHT';
+            }
+        });
+    </script>
 </body>
 
 </html>
