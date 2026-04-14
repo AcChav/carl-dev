@@ -66,6 +66,11 @@ h6 {
     margin-bottom: 1rem;
 }
 
+.date, .title-skills {
+    color: var(--text-primary);
+    font-weight: 700;
+}
+
 
 h1 {
     font-size: 2.25rem;
@@ -143,10 +148,10 @@ a:hover {
     z-index: -1;
     animation: pulse 4s infinite ease-in-out;
     background: repeating-radial-gradient(circle,
-            #ff7272,
-            #ff7272 2px,
+            #ffb835,
             #ffb835 2px,
-            #ffb835 4px);
+            #ff7272 2px,
+            #ff7272 4px);
     opacity: 0.5;
 }
 
