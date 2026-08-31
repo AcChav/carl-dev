@@ -31,12 +31,13 @@ export default function MainContent() {
     <main className="lg:col-span-8 bg-slate-800/80 border border-slate-700/60 rounded-3xl p-6 flex flex-col justify-between shadow-xl backdrop-blur-sm gap-6">
       <div className="space-y-4">
         <div>
-          <h1 className="text-2xl font-bold tracking-tight text-white">
+          <h1 className="text-3xl font-bold tracking-tight text-white">
             {profileConfig.name}
           </h1>
 
           {/* Tech Badges with Toggle */}
-          <div className="flex flex-wrap items-center gap-2 mt-3">
+          {/* Fixed-height wrapper for header tech badges */}
+          <div className="min-h-[4.5rem] flex flex-wrap items-center content-start gap-2 mt-3">
             {visibleTech.map((tech) => (
               <TechBadge key={tech.name} name={tech.name} />
             ))}

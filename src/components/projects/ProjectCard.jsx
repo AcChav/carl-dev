@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Github, ExternalLink } from "lucide-react";
 
-const CARD_TECH_LIMIT = 2; // Show top 2 tags by default
+const CARD_TECH_LIMIT = 2;
 
 export default function ProjectCard({ project }) {
   const [showAllTags, setShowAllTags] = useState(false);
@@ -14,28 +14,32 @@ export default function ProjectCard({ project }) {
   const extraCount = project.tech.length - CARD_TECH_LIMIT;
 
   return (
-    <article className="group bg-slate-900/70 border border-slate-800 rounded-2xl p-5 flex flex-col justify-between hover:border-indigo-500/40 hover:-translate-y-1 hover:shadow-lg hover:shadow-indigo-500/5 transition-all duration-200">
+    <article className="h-[265px] group bg-slate-900/70 border border-slate-800 rounded-2xl p-5 flex flex-col justify-between hover:border-indigo-500/40 hover:-translate-y-1 hover:shadow-lg hover:shadow-indigo-500/5 transition-all duration-200">
+      {/* Top Details */}
       <div className="space-y-3">
-        <div className="flex items-start justify-between gap-2">
-          <h3 className="font-semibold text-slate-100 text-base group-hover:text-indigo-300 transition-colors">
+        <div className="flex items-start justify-between gap-2 min-h-[2.75rem]">
+          <h3 className="font-semibold text-slate-100 text-sm leading-snug line-clamp-2 group-hover:text-indigo-300 transition-colors">
             {project.title}
           </h3>
-          <span className="text-[11px] font-semibold bg-indigo-950/80 text-indigo-300 border border-indigo-700/40 px-2.5 py-0.5 rounded-full whitespace-nowrap">
+          <span className="text-[10px] font-semibold bg-indigo-950/80 text-indigo-300 border border-indigo-700/40 px-2 py-0.5 rounded-full whitespace-nowrap shrink-0">
             {project.category}
           </span>
         </div>
-        <p className="text-xs text-slate-400 leading-relaxed line-clamp-3">
+
+        {/* Description with full 4-line allowance */}
+        <p className="text-xs text-slate-400 leading-relaxed line-clamp-4">
           {project.description}
         </p>
       </div>
 
-      <div className="mt-5 pt-3 border-t border-slate-800/80 flex items-center justify-between gap-2">
-        {/* Tech tags list with toggle button */}
+      {/* Bottom Footer Section */}
+      <div className="pt-3 border-t border-slate-800/80 flex items-center justify-between gap-2">
+        {/* Constrained tags list */}
         <div className="flex items-center gap-1.5 flex-wrap">
           {displayedTech.map((t) => (
             <span
               key={t}
-              className="text-[10px] font-medium bg-slate-800/90 border border-slate-700/60 px-2 py-0.5 rounded-md text-slate-300"
+              className="text-[10px] font-medium bg-slate-800/90 border border-slate-700/60 px-2 py-0.5 rounded-md text-slate-300 whitespace-nowrap"
             >
               {t}
             </span>
@@ -52,8 +56,8 @@ export default function ProjectCard({ project }) {
           )}
         </div>
 
-        {/* Repository and Live Links */}
-        <div className="flex items-center gap-2 shrink-0">
+        {/* Action Icons */}
+        <div className="flex items-center gap-1.5 shrink-0">
           {project.githubUrl && (
             <a
               href={project.githubUrl}
