@@ -17,7 +17,7 @@ export const profileConfig = {
     { name: "Express" },
     { name: "PostgreSQL" },
     { name: "Firebase" },
-    { name: "Tailwind CSS" },
+    { name: "Tailwind" },
     { name: "JQuery" },
     { name: "EJS" },
     { name: "C++" },
