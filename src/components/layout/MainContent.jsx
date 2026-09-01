@@ -37,7 +37,7 @@ export default function MainContent() {
 
           {/* Tech Badges with Toggle */}
           {/* Fixed-height wrapper for header tech badges */}
-          <div className="min-h-[4.5rem] flex flex-wrap items-center content-start gap-2 mt-3">
+          <div className="min-h-[2.5rem] flex flex-wrap items-center content-start gap-1 mt-3">
             {visibleTech.map((tech) => (
               <TechBadge key={tech.name} name={tech.name} />
             ))}

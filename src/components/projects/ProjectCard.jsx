@@ -14,10 +14,10 @@ export default function ProjectCard({ project }) {
   const extraCount = project.tech.length - CARD_TECH_LIMIT;
 
   return (
-    <article className="h-[265px] group bg-slate-900/70 border border-slate-800 rounded-2xl p-5 flex flex-col justify-between hover:border-indigo-500/40 hover:-translate-y-1 hover:shadow-lg hover:shadow-indigo-500/5 transition-all duration-200">
+    <article className="h-auto md:h-[265px] group bg-slate-900/70 border border-slate-800 rounded-2xl p-4 sm:p-5 flex flex-col justify-between gap-4 md:gap-0 hover:border-indigo-500/40 hover:-translate-y-1 hover:shadow-lg hover:shadow-indigo-500/5 transition-all duration-200">
       {/* Top Details */}
-      <div className="space-y-3">
-        <div className="flex items-start justify-between gap-2 min-h-[2.75rem]">
+      <div className="space-y-2">
+        <div className="flex items-start justify-between gap-2 min-h-0 md:min-h-[2.5rem]">
           <h3 className="font-semibold text-slate-100 text-sm leading-snug line-clamp-2 group-hover:text-indigo-300 transition-colors">
             {project.title}
           </h3>
@@ -26,8 +26,8 @@ export default function ProjectCard({ project }) {
           </span>
         </div>
 
-        {/* Description with full 4-line allowance */}
-        <p className="text-xs text-slate-400 leading-relaxed line-clamp-4">
+        {/* Description: natural flow on mobile, line-clamped on desktop */}
+        <p className="text-xs text-slate-400 leading-relaxed line-clamp-3">
           {project.description}
         </p>
       </div>
