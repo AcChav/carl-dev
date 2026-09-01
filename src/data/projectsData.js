@@ -4,8 +4,8 @@ export const projectsData = [{
         category: "Full-Stack",
         description: "Recruitment portal built for Bayloni Services to streamline applicant tracking, candidate submissions, and job postings.",
         tech: ["React", "Node.js", "Express", "PostgreSQL"],
-        githubUrl: "https://github.com/AcChav",
-        liveUrl: null,
+        githubUrl: null,
+        liveUrl: "https://erecruitment-9846f.web.app/",
     },
     {
         id: "tronix-solution",
@@ -13,7 +13,7 @@ export const projectsData = [{
         category: "Full-Stack",
         description: "Comprehensive enterprise web portal engineered as an internship capstone to modernize internal client service workflows.",
         tech: ["JavaScript", "HTML", "CSS", "Node.js"],
-        githubUrl: "https://github.com/AcChav",
+        githubUrl: "https://acchav.github.io/Tronix-Seleste/",
         liveUrl: null,
     },
     {
@@ -22,7 +22,7 @@ export const projectsData = [{
         category: "Frontend",
         description: "Classic interactive sequence game built with vanilla state logic, sound effects, and persistent local storage scoring.",
         tech: ["JavaScript", "HTML", "CSS"],
-        githubUrl: "https://github.com/AcChav",
+        githubUrl: "https://acchav.github.io/simon-game/",
         liveUrl: null,
     },
     {
@@ -31,7 +31,7 @@ export const projectsData = [{
         category: "Frontend",
         description: "Responsive showcase application focusing on clean semantic layout, mobile-first design, and core DOM manipulation.",
         tech: ["HTML", "CSS", "JavaScript"],
-        githubUrl: "https://github.com/AcChav",
+        githubUrl: "https://acchav.github.io/orbite-web-finance/",
         liveUrl: null,
     },
     {
@@ -49,7 +49,7 @@ export const projectsData = [{
         category: "Frontend",
         description: "Interactive time tracking utility that calculates precise elapsed life metrics across days, weeks, and month increments.",
         tech: ["JavaScript", "HTML", "CSS"],
-        githubUrl: "https://github.com/AcChav",
+        githubUrl: "https://acchav.github.io/lifeTimer/",
         liveUrl: null,
     },
     {
@@ -58,7 +58,7 @@ export const projectsData = [{
         category: "Utility",
         description: "Lightweight algorithmic utility providing pseudo-random bounded value generation with instant interactive UI updates.",
         tech: ["JavaScript", "HTML", "CSS"],
-        githubUrl: "https://github.com/AcChav",
+        githubUrl: "https://acchav.github.io/RandomNum/",
         liveUrl: null,
     },
     {
@@ -67,8 +67,8 @@ export const projectsData = [{
         category: "Automation",
         description: "File organization tool that automatically matches PNG/SVG assets and dynamically generates matching directory structures.",
         tech: ["JavaScript", "Node.js"],
-        githubUrl: "https://github.com/AcChav",
-        liveUrl: null,
+        githubUrl: null,
+        liveUrl: "https://github.com/AcChav/Clipart-sorter",
     },
     {
         id: "auth-query-microservice",
